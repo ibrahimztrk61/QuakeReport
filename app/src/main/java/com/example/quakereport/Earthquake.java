@@ -1,59 +1,73 @@
 package com.example.quakereport;
 
-public class Earthquake {
+
 
     /**
-     * {@link Earthquake} represents a earthquake info
-     * Each object has 3 properties: magnitude, place and time
+     * An {@link Earthquake} object contains information related to a single earthquake.
      */
+    public class Earthquake {
 
+        /**
+         * Magnitude of the earthquake
+         */
+        private double mMagnitude;
 
+        /**
+         * Location of the earthquake
+         */
+        private String mLocation;
 
+        /**
+         * Time of the earthquake
+         */
+        private long mTimeInMilliseconds;
 
-    private double mMagnitude;
+        /**
+         * Website URL of the earthquake
+         */
+        private String mUrl;
 
-    private  String mPlace;
+        /**
+         * Constructs a new {@link Earthquake} object.
+         *
+         * @param magnitude          is the magnitude (size) of the earthquake
+         * @param location           is the location where the earthquake happened
+         * @param timeInMilliseconds is the time in milliseconds (from the Epoch) when the
+         *                           earthquake happened
+         * @param url                is the website URL to find more details about the earthquake
+         */
+        public Earthquake(double magnitude, String location, long timeInMilliseconds, String url) {
+            mMagnitude = magnitude;
+            mLocation = location;
+            mTimeInMilliseconds = timeInMilliseconds;
+            mUrl = url;
+        }
 
-    /** Time of the earthquake */
-    private long mTime;
+        /**
+         * Returns the magnitude of the earthquake.
+         */
+        public double getMagnitude() {
+            return mMagnitude;
+        }
 
-    /**
-     * Create a new Earthquake object.  --constructor--
-     *
-     * @param magnitude is the magnitude of earthquake
-     * @param place is the where the earthquake occurred
-     * @param time is the when the earthquake occurred
-     **/
+        /**
+         * Returns the location of the earthquake.
+         */
+        public String getLocation() {
+            return mLocation;
+        }
 
+        /**
+         * Returns the time of the earthquake.
+         */
+        public long getTimeInMilliseconds() {
+            return mTimeInMilliseconds;
+        }
 
-    public Earthquake (double magnitude, String place, long time){
-      mMagnitude =magnitude;
-      mPlace = place;
-      mTime = time;
-
+        /**
+         * Returns the website URL to find more information about the earthquake.
+         */
+        public String getUrl() {
+            return mUrl;
+        }
     }
-
-    /**
-     * Returns the magnitude of the earthquake.
-     */
-
-    public double getmMagnitude() {
-        return mMagnitude;
-    }
-
-
-
-    public String getmPlace() {
-        return mPlace;
-    }
-
-
-
-    public long getmTime() {
-        return mTime;
-    }
-
-
-
-
-}
